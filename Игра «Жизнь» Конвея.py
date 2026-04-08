@@ -62,7 +62,7 @@ def cell_grow(y,x):  # Разрастание клетки если у нее б
 
 while True: #Вывод поля и сама реализация последовательности игры
     zone_hash = copy.deepcopy(zone)
-    #os.system('cls' if os.name == 'nt' else 'clear')
+    #os.system('cls' if os.name == 'nt' else 'clear') Если консоль поддерживает очистку то это пожалуй лучше на низких DELAY
     for l in range(20):
         print()
     for i in zone:

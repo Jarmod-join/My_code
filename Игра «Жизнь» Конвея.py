@@ -1,4 +1,4 @@
-import time, copy, random # os
+import time, copy, random#, os
 
 #Необходимо создать поле 6 на 6 единиц и расположить в них нн-ое количество клеток. Правила их распространения
 # 1.Сущетвует два состояния клетки: Живой или мертвый.
@@ -7,16 +7,16 @@ import time, copy, random # os
 # 4.Если У живой клетки менее двух соседей она умирает.
 # 5.Соседи считаются клетки в радиусе 3 на 3.
 
-LIVE_CELLS_IN_ROUND = 0.4
-LENGTH = 15
-WIDTH = 15
+LIVE_CELLS_IN_ROUND = 0.4 #Процент заполнения клетками
+LENGTH = 20
+WIDTH = 20
 DELAY = 0.5
 DEAD = '░░'
 LIVE = '██'
 
 zone = [[DEAD for _ in range(WIDTH)] for _ in range(LENGTH)] # Эти 5 строк писала нейронка. Создание и заполнение списка
-all_cells = [(y, x) for y in range(LENGTH) for x in range(WIDTH)]
-live_positions = random.sample(all_cells, int(LENGTH * WIDTH * LIVE_CELLS_IN_ROUND))
+all_cells = [(y, x) for y in range(LENGTH) for x in range(WIDTH)] # 08.04.26. Я узнал как ими пользоваться возможно перепишу
+live_positions = random.sample(all_cells, int(LENGTH * WIDTH * LIVE_CELLS_IN_ROUND)) # когда будет время
 for y, x in live_positions:
     zone[y][x] = LIVE
 
@@ -62,11 +62,11 @@ def cell_grow(y,x):  # Разрастание клетки если у нее б
 
 while True: #Вывод поля и сама реализация последовательности игры
     zone_hash = copy.deepcopy(zone)
-    # os.system('cls' if os.name == 'nt' else 'clear') - если вывод через консоль с поддержкой очистки(красиво, плавно)
+    #os.system('cls' if os.name == 'nt' else 'clear')
     for l in range(20):
         print()
     for i in zone:
-        print(' '.join(i)) #Помогла нейронка(с красивым выводом, не знаю что такое функция .join() )
+        print(''.join(i)) #Помогла нейронка(с красивым выводом, не знаю что такое функция .join() )
     chek_live()
     chek_die()
     zone = zone_hash

@@ -16,4 +16,4 @@ if WORK_MOD == 0:
     print('Найденные номера в тексте:\n' + '\n'.join(number_list))
     print('Найденные почты:\n' + '\n'.join(email_list))
 elif WORK_MOD == 1:
-    pyperclip.copy('\n'.join(number_list) + '\n'.join(email_list))
+    pyperclip.copy('\n'.join(number_list) + '\n'.join(email_list))  

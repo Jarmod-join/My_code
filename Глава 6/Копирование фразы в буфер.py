@@ -1,6 +1,6 @@
 import pyperclip # Выполняет основную функцию
 def clean(): # Костыль. Очищает консоль
-    for i in range(50):
+    for i in range(20):
         print()
 
 def viz_list(list_answer):

@@ -4,8 +4,8 @@
 
 import re
 
-password = '123abcDExyz'
-REGEX_FORM = re.compile(r'(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}')
+password = 'as3dASD'
+REGEX_FORM = re.compile(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$')
 
 if REGEX_FORM.search(password):
     print('Ваш пароль являеться хорошим!')

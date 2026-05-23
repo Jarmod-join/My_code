@@ -10,6 +10,8 @@
 # от компьютера и придя увидеть что когда вы выполняли поиск на всем диске вы внезапно видите что вес этого архива
 # перевалил за 50GB и более
 
+# Надо поменять аргументы путь расширение
+
 import zipfile, os, sys
 from pathlib import Path
 
@@ -21,7 +23,7 @@ def validate_path(str_path):
     return path_test
 
 def main():
-# Информация и проверка аргументов
+# Информация и проверка аргументов 
     try:
         if sys.argv[1].startswith('.'):
             extension = sys.argv[1]

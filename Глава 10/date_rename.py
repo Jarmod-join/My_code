@@ -1,6 +1,5 @@
 import os, re, shutil
 from pathlib import Path
-import test_2
 # Создать 1000 файлов с разными датами типа ММ-ДД-ГГГГ
 
 REGEX = re.compile(r'([1-9]|1[0-2])-([1-9]|[12]\d|3[01])-(2\d{3})')
